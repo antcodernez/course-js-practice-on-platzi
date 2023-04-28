@@ -1,0 +1,122 @@
+*
+    {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        list-style: none;
+    }
+html
+    {
+        font-size: 62.5%;
+        box-sizing: border-box;
+    }
+:root
+    {
+        --very-light-pink: #C7C7C7;
+        --text-input-field: #f7f7f7;
+        --hospital-green: #ACD9B2;
+        --white: white;
+        --black: black;
+        --sm: 1.4rem;
+        --md: 1.6rem;
+        --lg: 1.8rem;
+    }
+body
+    {
+        font-family: 'Quicksand' , sans-serif;
+        font-size: 1.6rem;
+    }
+header nav
+    {
+        display: flex;
+        height: 6rem;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 2px 3px var(--very-light-pink);
+        padding: 0 5rem;
+    }
+header nav .icon-menu
+    {
+       display: none;
+    }
+header nav .navbar-left
+    {
+        display: flex;
+    }
+header nav .navbar-left .logo
+    {
+        width: 12rem;
+    }
+header nav .navbar-left ul
+    {
+        margin-left: 6rem;
+    }
+header nav .navbar-left ul, .navbar-right ul
+    {
+        display: flex;
+        align-items: center;
+
+    }
+header nav .navbar-left ul li a, .navbar-right ul li a
+    {
+        padding: 1rem;
+        color: var(--very-light-pink);
+        border: 0.1rem solid var(--white);
+        border-radius: 0.8rem;
+    }
+header nav .navbar-left ul li a:hover, .navbar-right ul li a:hover
+    {
+        color: var(--hospital-green);  
+        border: 0.1rem solid var(--hospital-green);
+        border-radius: 0.8rem;
+    }
+header nav .navbar-right .navbar-right__email
+    {
+        color: var(--black);
+        font-size: var(--sm);
+    }
+header nav .navbar-right ul li .flechita
+    {
+        transform: rotate(90deg);
+        margin: 0 1rem;
+    }
+header nav .navbar-right ul .navbar-right__shooping-cart
+    {
+        position: relative;
+    }
+header nav .navbar-right ul .navbar-right__shooping-cart div
+    {
+        width: 1.4rem;
+        height: 1.4rem; 
+        background-color: var(--hospital-green);
+        border-radius: 50%;
+        font-size:smaller;
+        font-weight: bold;
+        position: absolute;
+        top: -4px;
+        right: -4px;
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+    }
+@media (max-width: 870px) 
+    {   
+        header nav .icon-menu
+            {
+                display: block; 
+            }
+        header nav .navbar-left ul
+            {
+                display: none;
+            }      
+        header nav .navbar-right .navbar-right__email
+            {
+                display: none;
+            }
+        header nav .navbar-right ul li .flechita
+            {
+                display: none;
+            }
+    }
