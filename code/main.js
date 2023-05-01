@@ -30,10 +30,3 @@ const returnBtnShoppingCart = document.querySelector(".return-button-main-conten
 
 menuCartIcon.addEventListener("click", () => { shoopingCart.classList.toggle("main-content--active")});
 returnBtnShoppingCart.addEventListener("click", () => { shoopingCart.classList.toggle("main-content--active")});
-
-// window.addEventListener("click", e => {
-//     if(shoopingCart.classList.contains("main-content--active") && e.target != shoopingCart && e.target != menuCartIcon)
-//         {
-//             shoopingCart.classList.toggle("main-content--active");
-//         }
-// });
