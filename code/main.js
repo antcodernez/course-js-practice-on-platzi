@@ -81,9 +81,8 @@ function renderProducts(array)
         productInfoDiv.appendChild(productPrice);
         productInfoDiv.appendChild(productName);
         
-        productInfo.appendChild(productInfoDiv);
-        productInfo.appendChild(productIconCartContainer);
-        
+        productInfo.append(productInfoDiv, productIconCartContainer);
+        // con append puedo meter varios nodos de matrazo jaja        
         productCard.appendChild(img);        
         productCard.appendChild(productInfo);        
 
@@ -92,10 +91,10 @@ function renderProducts(array)
     }
 
 // Prueba de que puedo meter cualquier mamada a mis componentes en JS
-// productList.push({
-//     name: "xd",
-//     price: 5235252,
-//     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSERiBwAiEccLg7QH8nhzg5tyVLi-ftFaFA-7zCXKu&s"
-// });
+productList.push({
+    name: "Drosera spatulata",
+    price: 130,
+    image: "https://macetaman.com/wp-content/uploads/2021/04/drosera-spatulata.jpg"
+});
 
 renderProducts(productList);
