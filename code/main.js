@@ -1,3 +1,4 @@
+
 // menu desktop
 const menuEmail = document.querySelector(".navbar-right__email");
 const menuFlechita = document.querySelector(".flechita");
@@ -34,19 +35,25 @@ returnBtnShoppingCart.addEventListener("click", () => { shoopingCart.classList.t
 // products content
 
 const productList = [{
+            id: 1,
             name: "Drosera Capensis",
             price: 120,
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPiykDwsXxevcPtbFacHU04Rb_4NuvH92G2g&usqp=CAU"
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPiykDwsXxevcPtbFacHU04Rb_4NuvH92G2g&usqp=CAU",
+            description: "Drosera capensis: Sticky, red-tentacled carnivorous plant. Lures and traps insects on its mucilage-covered leaves."
         }, 
         {
+            id: 2,
             name: "Dionea Muscipula",
             price: 150,
-            image: "https://http2.mlstatic.com/D_NQ_NP_823732-MLM40604193357_012020-O.jpg"
+            image: "https://http2.mlstatic.com/D_NQ_NP_823732-MLM40604193357_012020-O.jpg",
+            description: "Dionea muscipula: Venus Flytrap. Carnivorous plant with two lobes on each leaf that snap shut when triggered by an insect. Known for its fast movements and digestive enzymes."
         },
         {
+            id: 3,
             name: "Nepenthes",
             price: 300,
-            image: "https://verdecora.es/blog/wp-content/uploads/2022/01/nepenthes.jpg.webp"
+            image: "https://verdecora.es/blog/wp-content/uploads/2022/01/nepenthes.jpg.webp",
+            description: "Nepenthes: Tropical pitcher plant. Carnivorous plant with a deep, slippery cavity filled with digestive liquid, used to trap and digest insects. Some species can grow quite large."
         }        
     ];
 
@@ -70,7 +77,7 @@ function renderProducts(array)
         const productPrice = document.createElement("p");
         const productName = document.createElement("p");
         productName.innerHTML = `${product.name}`;
-        productPrice.innerHTML = `$ ${product.price}`;
+        productPrice.innerHTML = `$${product.price}`;
 
         const productIconCartContainer = document.createElement("figure");
         const productIconCart = document.createElement("img");
@@ -92,9 +99,13 @@ function renderProducts(array)
 
 // Prueba de que puedo meter cualquier mamada a mis componentes en JS
 productList.push({
+    id: 4,
     name: "Drosera spatulata",
     price: 130,
-    image: "https://macetaman.com/wp-content/uploads/2021/04/drosera-spatulata.jpg"
+    description: "Drosera spatulata: Carnivorous sundew plant with spatula-shaped leaves covered in glandular tentacles that secrete a sticky substance. The substance traps insects, which are then digested by the plant's enzymes.",
+    image: "https://macetaman.com/wp-content/uploads/2021/04/drosera-spatulata.jpg", 
 });
 
 renderProducts(productList);
+
+// Product detail
