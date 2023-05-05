@@ -59,6 +59,11 @@ const productList = [{
 
 const cardsContainer = document.querySelector(".cards-container");
 
+function productDetail()
+    {
+        alert("Hola papi")
+    }
+
 function renderProducts(array)
     {
         for (product of array)
@@ -82,7 +87,8 @@ function renderProducts(array)
         const productIconCartContainer = document.createElement("figure");
         const productIconCart = document.createElement("img");
         productIconCart.setAttribute("src", "../assets/icons/bt_add_to_cart.svg");
-
+        productIconCart.classList.add("button-add");
+        productIconCart.setAttribute("onclick", "productDetail()");
         productIconCartContainer.appendChild(productIconCart);
         
         productInfoDiv.appendChild(productPrice);
@@ -109,3 +115,5 @@ productList.push({
 renderProducts(productList);
 
 // Product detail
+
+const products = document.querySelectorAll(".button-add");
