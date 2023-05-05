@@ -59,10 +59,6 @@ const productList = [{
 
 const cardsContainer = document.querySelector(".cards-container");
 
-function productDetail()
-    {
-        alert("Hola papi")
-    }
 
 function renderProducts(array)
     {
@@ -73,6 +69,7 @@ function renderProducts(array)
         
         const img = document.createElement("img");
         img.setAttribute('src', product.image);
+        img.setAttribute("onclick", "productDetail()");
         img.classList.add("img-product");
 
         const productInfo = document.createElement("div");
@@ -115,5 +112,12 @@ productList.push({
 renderProducts(productList);
 
 // Product detail
+const productDetailCard = document.querySelector(".product-detail");
 
-const products = document.querySelectorAll(".button-add");
+function productDetail()
+    {
+        productDetailCard.classList.toggle("product-detail__active");
+    }
+const closeProductDetail = document.querySelector(".product-detail__close");
+
+closeProductDetail.addEventListener("click", productDetail);
