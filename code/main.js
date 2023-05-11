@@ -29,7 +29,7 @@ const menuCartIcon = document.querySelector(".navbar-right__shooping-cart");
 const shoopingCart = document.querySelector(".main-content");
 const returnBtnShoppingCart = document.querySelector(".return-button-main-content");
 
-menuCartIcon.addEventListener("click", () => { shoopingCart.classList.toggle("main-content--active")});
+menuCartIcon.addEventListener("click", () => {shoopingCart.classList.toggle("main-content--active")});
 returnBtnShoppingCart.addEventListener("click", () => { shoopingCart.classList.toggle("main-content--active")});
 
 // products content
@@ -116,6 +116,10 @@ const productDetailCard = document.querySelector(".product-detail");
 
 function productDetail()
     {
+        if(shoopingCart.classList.contains("main-content--active"))
+            {
+                shoopingCart.classList.remove("main-content--active")
+            }
         productDetailCard.classList.toggle("product-detail__active");
     }
 const closeProductDetail = document.querySelector(".product-detail__close");
