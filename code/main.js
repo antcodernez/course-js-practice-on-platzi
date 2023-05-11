@@ -14,7 +14,17 @@ function toggleDesktopMenu()
 const menuHamgurber = document.querySelector(".icon-menu");
 const menuMobile = document.querySelector(".mobile-menu");
 
-menuHamgurber.addEventListener("click", () => {menuMobile.classList.toggle("mobile-menu-translate");});
+menuHamgurber.addEventListener("click", () => {
+    if(productDetailCard.classList.contains("product-detail__active"))
+        {
+            productDetailCard.classList.remove("product-detail__active");
+        }
+    else if (shoopingCart.classList.contains("main-content--active"))
+        {
+            shoopingCart.classList.remove("main-content--active")
+        }
+    menuMobile.classList.toggle("mobile-menu-translate");
+});
 
 window.addEventListener("click", e =>
     {
@@ -34,8 +44,8 @@ menuCartIcon.addEventListener("click", () => {
         {
             productDetailCard.classList.remove("product-detail__active");
         }
-    shoopingCart.classList.toggle("main-content--active"
-    )});
+    shoopingCart.classList.toggle("main-content--active")
+    });
 returnBtnShoppingCart.addEventListener("click", () => { shoopingCart.classList.toggle("main-content--active")});
 
 // products content
