@@ -29,7 +29,13 @@ const menuCartIcon = document.querySelector(".navbar-right__shooping-cart");
 const shoopingCart = document.querySelector(".main-content");
 const returnBtnShoppingCart = document.querySelector(".return-button-main-content");
 
-menuCartIcon.addEventListener("click", () => {shoopingCart.classList.toggle("main-content--active")});
+menuCartIcon.addEventListener("click", () => {
+    if (productDetailCard.classList.contains("product-detail__active")) 
+        {
+            productDetailCard.classList.remove("product-detail__active");
+        }
+    shoopingCart.classList.toggle("main-content--active"
+    )});
 returnBtnShoppingCart.addEventListener("click", () => { shoopingCart.classList.toggle("main-content--active")});
 
 // products content
