@@ -360,15 +360,15 @@ main .main-content button
     {
         cursor: pointer;
     }
-.product-detail > img:nth-child(2)
+.product-detail img
     {
         width: 100%;
         height: 36rem;
-        object-fit: cover;
-        border-radius: 0 0 2rem 2rem;
+        /* object-fit: cover; */
     }
 .product-detail .product-info
     {
+        width: 100%;
         flex-direction: column;
     }
 .product-detail .product-info p:nth-child(1)
@@ -406,9 +406,19 @@ main .main-content button
     }
 .product-detail .product-info .add-to-cart-button
     {
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+#icon-add-cart
+    {
+        position: absolute;
+        height: 40px;
+        width: 40px;
+        object-fit: contain;
+        left: calc(68%);
+        top: calc(89%);
     }
 .cards-container
     {

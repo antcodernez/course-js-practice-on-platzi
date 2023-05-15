@@ -86,6 +86,7 @@ function renderProducts(array)
         const img = document.createElement("img");
         img.setAttribute('src', product.image);
         img.setAttribute("onclick", "productDetail()");
+        img.setAttribute("id",product.id);
         img.classList.add("img-product");
 
         const productInfo = document.createElement("div");
@@ -111,7 +112,6 @@ function renderProducts(array)
         // con append puedo meter varios nodos de matrazo jaja        
         productCard.appendChild(img);        
         productCard.appendChild(productInfo);        
-
         cardsContainer.appendChild(productCard);        
     }
     }
@@ -136,8 +136,39 @@ function productDetail()
             {
                 shoopingCart.classList.remove("main-content--active")
             }
+        
         productDetailCard.classList.toggle("product-detail__active");
     }
 const closeProductDetail = document.querySelector(".product-detail__close");
 
 closeProductDetail.addEventListener("click", productDetail);
+
+//Detalles de producto de manera dinámica
+
+function renderProductDetail(imageURL, nameProduct, productPriceOBJ, description)
+    {
+        const imageProduct = document.createElement("img");
+        imageProduct.setAttribute("src", imageURL);
+
+        const containerProductInfo = document.createElement("div");
+        containerProductInfo.classList.add("product-info");
+        const productPrice = document.createElement("p");
+        productPrice.innerHTML = productPriceOBJ;
+        const productNameDimamic = document.createElement("p");
+        productNameDimamic.innerHTML = nameProduct;
+        const productDescription = document.createElement("p");
+        productDescription.innerHTML =  description;
+        const buttonToAddToCArt = document.createElement("button");
+        buttonToAddToCArt.classList.add("primary-button");
+        buttonToAddToCArt.classList.add("add-to-cartx-button");
+        buttonToAddToCArt.innerText = "Add to cart";
+
+        const iconAddToCart = document.createElement("img");
+        iconAddToCart.setAttribute("src", "../assets/icons/bt_add_to_cart.svg");
+        iconAddToCart.setAttribute("id", "icon-add-cart");
+
+        buttonToAddToCArt.appendChild(iconAddToCart);
+        containerProductInfo.append(productPrice, productNameDimamic, productDescription, buttonToAddToCArt);
+        productDetailCard.append(imageProduct, containerProductInfo);
+    }
+renderProductDetail(productList[2].image, productList[1].name);
