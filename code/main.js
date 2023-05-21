@@ -103,6 +103,7 @@ function renderProducts(array)
         productIconCart.setAttribute("src", "../assets/icons/bt_add_to_cart.svg");
         productIconCart.classList.add("button-add");
         productIconCart.setAttribute("onclick", "productDetail()");
+        productIconCart.setAttribute("id", product.id);
         productIconCartContainer.appendChild(productIconCart);
         
         productInfoDiv.appendChild(productPrice);
@@ -136,8 +137,26 @@ function productDetail()
             {
                 shoopingCart.classList.remove("main-content--active")
             }
-        
-        productDetailCard.classList.toggle("product-detail__active");
+let counterFunction = 0;
+        document.querySelectorAll(".img-product").forEach(el => 
+                {
+                    el.addEventListener("click", e => 
+                        {
+                            const id = e.target.getAttribute("id");
+                            productList.forEach(product => {
+                                if(id == product.id)
+                                    {
+                                        counterFunction++;
+                                        if(counterFunction > 1)
+                                            {
+                                                console.log("Se a clikeado más de una vez");
+                                            }
+                                        renderProductDetail(product.image, product.name, product.price, product.description)
+                                        productDetailCard.classList.toggle("product-detail__active");
+                                    }
+                            });
+                        });
+                });        
     }
 const closeProductDetail = document.querySelector(".product-detail__close");
 
@@ -171,4 +190,4 @@ function renderProductDetail(imageURL, nameProduct, productPriceOBJ, description
         containerProductInfo.append(productPrice, productNameDimamic, productDescription, buttonToAddToCArt);
         productDetailCard.append(imageProduct, containerProductInfo);
     }
-renderProductDetail(productList[2].image, productList[1].name);
+// renderProductDetail(productList[2].image, productList[2].name, productList[2].price, productList[2].description);
